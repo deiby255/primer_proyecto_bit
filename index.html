@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>DEV Soluciones</title>
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="assets/logo_empresa.png" type="image/png"/>
+  <meta name="description" content="Soluciones de software web, móvil, RPA y APIs a la medida.">
+</head>
+<body>
+  <!--  HEADER / NAV -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">DEV Soluciones</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main id="contenido">
+    <!-- INICIO: HERO + DESTACADOS + CATEGORÍAS -->
+    <section id="inicio" class="hero" aria-label="Portada">
+      <div class="hero-inner">
+        <h1>Soluciones de software a la medida</h1>
+        <p>Web, móvil, RPA y APIs con calidad, seguridad y desempeño.</p>
+      </div>
+
+      <!-- Destacados (cards) -->
+      <ul class="cards" role="list">
+        <li class="card" data-category="web">
+          <img src="assets/producto_1.png" alt="Demostración de app web personalizada"/>
+          <div class="overlay">
+            <span>
+              <h2>Web personalizadas</h2>
+              <p>Portales, intranets y sistemas de gestión.</p>
+            </span>
+          </div>
+        </li>
+
+        <li class="card" data-category="movil">
+          <img src="assets/producto_2.png" alt="Vista previa de app móvil multiplataforma"/>
+          <div class="overlay">
+            <span>
+              <h2>Apps móviles</h2>
+              <p>Una base de código para iOS y Android.</p>
+            </span>
+          </div>
+        </li>
+
+        <li class="card" data-category="rpa">
+          <img src="assets/producto_3.png" alt="Ilustración de robot para automatización RPA"/>
+          <div class="overlay">
+            <span>
+              <h2>Automatización (RPA)</h2>
+              <p>Bots y scripts para tareas repetitivas.</p>
+            </span>
+          </div>
+        </li>
+
+        <li class="card" data-category="api">
+          <img src="assets/producto_4.png" alt="Íconos conectados representando APIs"/>
+          <div class="overlay">
+            <span>
+              <h2>Integración de APIs</h2>
+              <p>Pagos, ERP/CRM y servicios externos.</p>
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Categorías -->
+      <section class="categorias" aria-label="Categorías de servicios">
+        <h3>Categorías</h3>
+        <ul class="pills" role="list">
+          <li><button class="pill is-active" type="button" data-filter="all">Todo</button></li>
+          <li><button class="pill" type="button" data-filter="web">Web</button></li>
+          <li><button class="pill" type="button" data-filter="movil">Móvil</button></li>
+          <li><button class="pill" type="button" data-filter="rpa">RPA</button></li>
+          <li><button class="pill" type="button" data-filter="api">APIs</button></li>
+        </ul>
+      </section>
+    </section>
+
+    <!--  GALERÍA  -->
+    <section id="galeria" class="galeria" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">Galería de Proyectos</h2>
+
+      <!-- Filtros (coinciden con los de Inicio) -->
+      <div class="filters" role="toolbar" aria-label="Filtros de galería">
+        <button class="btn is-active" type="button" data-filter="all">Todo</button>
+        <button class="btn" type="button" data-filter="web">Web</button>
+        <button class="btn" type="button" data-filter="movil">Móvil</button>
+        <button class="btn" type="button" data-filter="rpa">RPA</button>
+        <button class="btn" type="button" data-filter="api">APIs</button>
+      </div>
+
+      <!-- Grid de miniaturas -->
+      <div class="grid">
+        <figure class="item" data-category="web" data-title="Portal de Clientes"
+                data-author="Equipo DEV" data-desc="Portal responsive con autenticación y dashboard.">
+          <img src="assets/dashboard.png" alt="Portal de Clientes con dashboard"/>
+          <figcaption>Portal de Clientes</figcaption>
+        </figure>
+
+        <figure class="item" data-category="movil" data-title="App de Delivery"
+                data-author="Equipo DEV" data-desc="Aplicación Flutter para pedidos en tiempo real.">
+          <img src="assets/app.png" alt="App de Delivery multiplataforma"/>
+          <figcaption>App de Delivery</figcaption>
+        </figure>
+
+        <figure class="item" data-category="rpa" data-title="Bot de Facturación"
+                data-author="Equipo DEV" data-desc="Robot que concilia facturas y genera reportes PDF.">
+          <img src="assets/boot_facturacion.webp" alt="Robot de facturación automatizada"/>
+          <figcaption>Bot de Facturación</figcaption>
+        </figure>
+
+        <figure class="item" data-category="api" data-title="Pasarela de Pago"
+                data-author="Equipo DEV" data-desc="API de pagos con tokens y Webhooks.">
+          <img src="assets/diagrama_integracion.png" alt="Diagrama de integración con pasarela de pago"/>
+          <figcaption>Pasarela de Pago</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- MODAL DE DETALLE -->
+    <div id="detalle" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-dialog">
+        <button class="modal-close" aria-label="Cerrar detalle">&times;</button>
+        <div class="modal-media">
+          <img id="modal-img" src="" alt="Detalle del proyecto seleccionado"/>
+        </div>
+        <div class="modal-body">
+          <h3 id="modal-title">Título</h3>
+          <p id="modal-desc">Descripción del proyecto.</p>
+          <small id="modal-author">Autor</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre" class="sobre" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre nosotros</h2>
+      <p class="lead">Somos un equipo de desarrollo enfocado en resultados: velocidad, seguridad y escalabilidad.</p>
+
+      <div class="team">
+        <article class="person">
+          <img src="assets/BIT.jpg" alt="Equipo BIT, Líder Técnico"/>
+          <h4>BIT</h4>
+          <small>Líder Técnico</small>
+        </article>
+        <article class="person">
+          <img src="assets/deiby.HEIC" alt="Deiby, Backend"/>
+          <h4>Deiby</h4>
+          <small>Backend</small>
+        </article>
+        <article class="person">
+          <img src="assets/yordan.HEIC" alt="Yordan, Frontend"/>
+          <h4>Yordan</h4>
+          <small>Frontend</small>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contáctanos</h2>
+      <p>¿Tienes una idea? Hablemos.</p>
+
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos tu proyecto" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 DEV Soluciones. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="main.js" defer></script>
+</body>
+</html>
